@@ -9,7 +9,7 @@ import { toTitleCase } from "../formatters";
 const BIAS_THRESHOLD = 1000;
 
 const BACKEND_API_URL =
-  "https://demographic-survey-backend.vercel.app/api/save-survey";
+  "https://southafrica25-backend.vercel.app/api/save-survey";
 
 const getBias = (incompatibleMilliseconds, compatibleMilliseconds) => {
   const incompatibleCompatibleDiff =
