@@ -1,0 +1,68 @@
+@import "../../node_modules/materialize-css/sass/materialize.scss";
+
+.target {
+  @extend .blue-text, .accent-4;
+  font-weight: 600;
+}
+
+.category {
+  @extend .green-text, .accent-4;
+  font-weight: 600;
+}
+
+.bold-red {
+  @extend .red-text, .accent-4;
+  font-weight: 700;
+}
+
+.or-separator {
+  color: #1e2b1d;
+}
+
+.target-and-or-category {
+  font-size: 28px;
+}
+
+.selection-groups {
+  display: relative;
+  width: 100%;
+  min-height: 150px;
+  .left-selection-group {
+    float: left;
+  }
+  .right-selection-group {
+    float: right;
+    text-align: right;
+  }
+}
+
+.displayed-test-value {
+  margin: 0 auto;
+  font-size: 38px;
+  margin: 30px auto 50px;
+  text-align: center;
+}
+
+.incorrect-key-x {
+  @extend .red-text, .accent-4;
+  font-size: 50px;
+  height: 50px;
+  font-weight: 700;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.result-headline {
+  text-align: center;
+  font-size: 24px;
+  max-width: 1000px;
+  margin: 0 auto 24px;
+}
+
+.row .borderme {
+        border: 5px solid grey;
+    /*width: 80%;*/
+    /*height: 50%;*/
+    min-width: 600px;
+    height: 600px;
+}

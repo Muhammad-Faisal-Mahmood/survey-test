@@ -1,0 +1,53 @@
+## DO NOT TOUCH THIS FILE - IMPORTANT TO UPDATE GH-PAGES, and has a token system 
+## if require updating pls msg collaborator esha0281 {author of file} and of second overview check system 
+## thank you and credit to collaborations of research (meaning no production of work) with support of LLM based models 
+## thank you and collaborative support JamesIves, collaboration library deployAction(github)
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Change to your default branch name (e.g., 'main' or 'master')
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Allow the GitHub Actions bot to push to the repository
+
+    steps:
+      # Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      # Set up Node.js environment
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '11.6.0'  # Specify Node.js version
+
+      # Install dependencies
+      - name: Install dependencies
+        run: |
+          npm install
+
+      # Build the website (assumes your build command is 'npm run build')
+      - name: Build website
+        run: |
+          npm run build
+
+      # Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages  # The branch to deploy to (GitHub Pages)
+          folder: build  # The folder to deploy (output folder of your build)
+          token: ${{ secrets.GITHUB_TOKEN }}  # GitHub token to authenticate the push
+
+      - name: Deploy to GitHub Pages (2nd Overview Check)
+        run: |
+          npm run deploy  # Run the custom deploy script to push to gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+
